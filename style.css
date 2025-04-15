@@ -1,0 +1,239 @@
+    /*  Self hosting Google Font (IBM Plex Mono) 
+    using @font-face rule. See Kevin Powell's tutorial: 
+    https://www.youtube.com/watch?v=zK-yy6C2Nck&t=279s */
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-Regular.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-Italic.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-ExtraLight.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-ExtraLightItalic.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-ExtraLightItalic.woff') format('woff');
+        font-weight: 200;
+        font-style: italic;
+    }
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-SemiBold.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-SemiBoldItalic.woff2') format('woff2'),
+         url('fonts/IBMPlexMono-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+    /* custom colouring link hover visited. 
+    explore scroll-based animations. 
+    https://www.youtube.com/watch?v=UmzFk68Bwdk&t=291s*/
+a:link{
+    color:darkblue;
+    }
+a:visited{
+    color:hotpink
+    }
+a:hover{
+    color: aquamarine
+    }
+
+    /* sticky header and navbar for easy viewing. */
+header {
+    position:-webkit-sticky;
+    position: sticky;
+    top: 0%;
+    border: 1px solid black;
+    background-color: white;
+}
+      
+nav {
+    position:-webkit-sticky;
+    position: sticky;
+    top: 3%;
+    font-size: 14px;
+    text-transform: uppercase; 
+    text-align: right;
+    }
+
+.start-point {
+    margin: 0%; 
+    text-align: left;
+    padding-top: 80%;
+    font: 200 italic 18px/2em 'IBM Plex Mono Extra Light', monospace; 
+    }
+
+.spinners {
+    width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    #spinner1 {
+        animation: scroll-rotate;
+        animation-timeline: view();
+    }
+
+    #spinner2 {
+        animation: scroll-rotate;
+        animation-timeline: view();
+    }
+
+    #spinner3 {
+        animation: scroll-rotate;
+        animation-timeline: view();
+    }
+
+
+aside {
+    display: grid;
+    border: 1px solid black;
+}
+
+    /* Consider: Flexbox, Grid, Positioning, stacking.
+    hierarchy, inheritence, absolute, relative, fixed, sticky, z-index
+    See Kevin Powell's tutorials. 
+    Positioning: https://www.youtube.com/watch?v=fF_NVrd1s14&t=121s 
+    Grid & Flexbox: https://www.youtube.com/watch?v=3elGSZSWTbM 
+    */  
+body {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    font: 300 normal 12px/1.4em ‘IBM Plex Mono Regular’, monospace;
+    }
+
+h1 {
+    font: 200 normal 40px/1.2em 'IBM Plex Mono Extra Light', monospace; 
+    margin: 0;
+    padding: 8%;
+}
+
+h2 {
+    font: 200 normal 24px/1.5em 'IBM Plex Mono Semi Bold', monospace;
+    padding-top: 2rem;
+    padding-top: 1.5rem;
+    margin: 0%;
+}
+
+h3 {
+    font: 600 normal 18px/1.3em 'IBM Plex Mono Semi Bold', monospace;
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
+em {
+    font: 300 italic 12px/1.4em ‘IBM Plex Mono’, monospace;
+    color: hotpink;
+}
+
+strong {
+    font: 600 normal 12px/1.4em ‘IBM Plex Mono’, monospace;
+    background-color: yellow;
+}
+
+.subtitle {
+    font: 300 normal 12px/1.4em ‘IBM Plex Mono’, monospace;
+    margin: 0;
+    padding-left: 8%;
+    padding-bottom: 8%;
+}
+
+    /* Explore CSS Animations and Transitions.
+    hover animation = full-circle rotation.
+    https://www.youtube.com/watch?v=y8-F5-2EIcg
+    scroll-based animation tutorial: 
+    https://www.youtube.com/watch?v=UmzFk68Bwdk&t=291s
+     */
+.autoRotate {
+    animation: scroll-rotate;
+    animation-timeline: view();
+}
+
+@keyframes scroll-rotate {
+    from {rotate: 0deg;}
+    to {rotate: 360deg;}
+    }
+
+    /* photo gallery with horizontal scroll animation.
+    https://www.youtube.com/watch?v=iLmBy-HKIAw  */
+img {
+    max-width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 1em;
+    width: 100%
+    }
+
+.button_gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1em;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5em;
+}
+
+#svg {
+    padding-top: 5em;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.columns {
+    padding-bottom: 8em;
+}
+
+video {
+    display: block; 
+    padding-bottom: 5em;
+    padding-top: 2%;
+    width: 100%
+    }
+
+footer {
+    position:-webkit-sticky;
+    position: sticky;
+    bottom: 0%;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 25px 5px 25px 25px;
+    text-align: left;
+    border: 1px solid black;
+    }
